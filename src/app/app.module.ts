@@ -15,7 +15,7 @@ import { FormComponent } from './form/form/form.component';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('92154821545-uv8rdrulnide4v2ehd84h7o5htr3m8jb.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('406785035742-9hroo8fnsqvn0sbs0ten5plnc1ksmujh.apps.googleusercontent.com')
   }
 ]);
 
