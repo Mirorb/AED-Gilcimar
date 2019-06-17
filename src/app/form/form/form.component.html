@@ -1,0 +1,53 @@
+<div class="jumbotron bg-transparent text-center">
+  <div *ngIf="validade" class="card text-center">
+    <h6 class="card-header">
+      Formulario
+    </h6>
+    <div *ngIf="!formValue && formValide " class="card-block">
+      <ng-container>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" [(ngModel)]="obj.name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Telefone</label>
+            <input type="tel" class="form-control" [(ngModel)]="obj.telefone" name="telefone"
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+          </div>
+          <button type="button" (click)="onSubmit()" class="btn btn-success">Enviar</button>
+        </form>
+      </ng-container>
+    </div>
+    <div *ngIf="formValue && formValide ">
+      <ng-container>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome inserido: </label><b> {{obj.name}} </b>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Telefone inserido: </label><b> {{obj.telefone}}</b>
+          </div>
+          <div class="form-group">
+            <h4>Tudo OK!</h4>
+          </div>
+          <button type="button" (click)="onSubmitClean()" class="btn btn-success">Voltar</button>
+        </form>
+      </ng-container>
+    </div>
+    <div *ngIf="!formValide">
+      <ng-container>
+        <form>
+          <div class="form-group">
+            <label for="name">{{dado}}</label>
+          </div>
+          <button type="button" (click)="onSubmitClean()" class="btn btn-success">Voltar</button>
+        </form>
+      </ng-container>
+
+    </div>
+    <div class="card-block">
+    </div>
+  </div>
+
+</div>
